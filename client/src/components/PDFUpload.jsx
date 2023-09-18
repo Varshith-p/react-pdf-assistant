@@ -34,7 +34,7 @@ const PDFUpload = () => {
         {({ getRootProps, getInputProps }) => (
           <div
             {...getRootProps()}
-            className="dropzone bg-green-100 border border-green-200 rounded-lg px-4 py-4 md:py-8 max-w-xs md:max-w-xl mx-auto flex w-full justify-center md:text-xl text-gray-500 cursor-pointer"
+            className="dropzone bg-black text-white rounded-lg px-4 py-4 md:py-8 max-w-xs md:max-w-xl mx-auto flex w-full justify-center md:text-xl cursor-pointer"
           >
             <input {...getInputProps()} />
             <p>Drag and drop a PDF file here, or click to select files.</p>
