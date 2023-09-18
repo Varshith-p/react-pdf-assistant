@@ -8,11 +8,14 @@
  *
  * @component
  */
-import { useState } from "react";
 import Dropzone from "react-dropzone";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setPDF } from "../redux/pdfSlice";
 
 const PDFUpload = () => {
-  const [pdf, setPdf] = useState(null);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   /**
    * Handle file drop or selection event.
@@ -21,23 +24,23 @@ const PDFUpload = () => {
    */
   const onDrop = (acceptedFiles) => {
     const file = acceptedFiles[0];
-    setPdf(file);
+    dispatch(setPDF({ file }));
+    navigate("/chat");
   };
 
   return (
-    <section className="m-8">
+    <section className="px-4 md:px-0 flex-1 flex items-center">
       <Dropzone onDrop={onDrop} accept={{ "application/pdf": [] }}>
         {({ getRootProps, getInputProps }) => (
           <div
             {...getRootProps()}
-            className="dropzone border-2 p-4 max-w-xl mx-auto flex w-full justify-center text-xl text-gray-500 cursor-pointer"
+            className="dropzone bg-green-100 border border-green-200 rounded-lg px-4 py-4 md:py-8 max-w-xs md:max-w-xl mx-auto flex w-full justify-center md:text-xl text-gray-500 cursor-pointer"
           >
             <input {...getInputProps()} />
             <p>Drag and drop a PDF file here, or click to select files.</p>
           </div>
         )}
       </Dropzone>
-      {pdf && <div>{pdf.name}</div>}
     </section>
   );
 };

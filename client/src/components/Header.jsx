@@ -9,9 +9,9 @@
  */
 const Header = () => {
   return (
-    <header className="w-full py-4 px-4 bg-sky-500 text-white">
+    <header className="w-full py-4 px-4 border-b">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-medium">React PDF Assistant</h1>
+        <h1 className="md:text-2xl font-medium">React PDF Assistant</h1>
       </div>
     </header>
   );
