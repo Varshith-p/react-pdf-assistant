@@ -15,10 +15,11 @@ const ChatSchema = new mongoose.Schema({
   fileUrl: { type: String },
   messages: [
     {
-      text: String,
-      from: String,
+      role: String,
+      content: String,
     },
   ],
+  context: String,
 });
 
 // Export the Mongoose model for 'Chat' using the defined schema

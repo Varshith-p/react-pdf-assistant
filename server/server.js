@@ -24,7 +24,7 @@ app.use(cors()); // Enable Cross-Origin Resource Sharing for API requests
 app.use(express.json()); // Parse JSON request bodies
 
 // API Routes
-app.use("/api/v1/chat", chatRouter); // Mount chat-related API routes under '/api/v1/chat'
+app.use("/api/v1/chats", chatRouter); // Mount chat-related API routes under '/api/v1/chat'
 
 // Error Handling Middleware
 app.use(notFoundMiddleware);

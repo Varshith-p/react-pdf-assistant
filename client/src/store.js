@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import pdfReducer from "./redux/pdfSlice";
+import chatReducer from "./redux/chatSlice";
 
 const store = configureStore({
   reducer: {
-    pdf: pdfReducer,
+    chat: chatReducer,
   },
 });
 

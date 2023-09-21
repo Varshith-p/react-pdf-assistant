@@ -10,7 +10,11 @@
 const express = require("express");
 
 // Import specific controller functions and middleware
-const { createChat, updateChat } = require("../controllers/chatController");
+const {
+  createChat,
+  getChat,
+  updateChat,
+} = require("../controllers/chatController");
 const upload = require("../middleware/upload");
 
 // Create an Express.js router instance
@@ -25,6 +29,16 @@ const router = express.Router();
  * uploads, and it expects the uploaded file to be associated with the 'file' field in the request.
  */
 router.route("/").post(upload.single("file"), createChat);
+
+/**
+ * Route: GET /api/v1/chat/:id
+ * Description: Get an existing chat
+ *
+ * This route handles HTTP GET requests for reading chat. It utilizes the 'getChat'
+ * controller function to process the request. The ':id' parameter in the URL is used to specify
+ * the chat to be retrieved.
+ */
+router.route("/:id").get(getChat);
 
 /**
  * Route: PATCH /api/v1/chat/:id
