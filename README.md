@@ -4,7 +4,7 @@ PDF Assistant using MERN stack
 
 ## Demo
 
-Project in action - [pdf-assistant]() 🚀
+Project in action - [pdf-assistant](https://react-pdf-assistant.vercel.app/) 🚀
 
 ## Tech Stack
 
