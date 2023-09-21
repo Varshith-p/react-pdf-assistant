@@ -1,4 +1,4 @@
-# Job Tracker
+# PDF Assistant
 
 PDF Assistant using MERN stack
 

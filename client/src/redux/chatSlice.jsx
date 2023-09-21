@@ -12,7 +12,7 @@ export const createChat = createAsyncThunk(
   async (payload, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/v1/chats",
+        "https://pdf-assistant-buv4.onrender.com/api/v1/chats",
         payload,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -33,7 +33,7 @@ export const getChat = createAsyncThunk(
   async (payload, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/v1/chats/${payload.id}`
+        `https://pdf-assistant-buv4.onrender.com/api/v1/chats/${payload.id}`
       );
       return response.data;
     } catch (error) {
@@ -50,7 +50,7 @@ export const sendMessage = createAsyncThunk(
   async (payload, { rejectWithValue }) => {
     try {
       const response = await axios.patch(
-        `http://localhost:5000/api/v1/chats/${payload.id}`,
+        `https://pdf-assistant-buv4.onrender.com/api/v1/chats/${payload.id}`,
         { message: payload.message }
       );
       return response.data;
